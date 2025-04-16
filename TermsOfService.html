@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | Harmony Timer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #141414;
+    --text-primary: #EAEAEA;
+    --text-secondary: #A0A0A0;
+    --accent-red: #E53935;
+    --accent-blue: #1E88E5;
+    --accent-green: #43A047;
+    --accent-periwinkle: #5D76CB;
+    --accent-teal: #00BCD4;
+    --accent-orange: #FF7043;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--bg-primary);
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header.scrolled {
+    padding: 12px 0;
+    background-color: var(--bg-primary);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-teal);
+    transition: width .3s;
+    margin-top: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent-teal);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #a31a27;
+}
+
+.content-page {
+    min-height: calc(100vh - 200px);
+    padding: 80px 0;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--border-subtle);
+}
+
+.content-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--accent-red);
+    text-align: center;
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.content-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: var(--text-primary);
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.content-section ul, .content-section ol {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    color: var(--text-secondary);
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+footer {
+    background-color: var(--bg-secondary);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        padding: 30px 20px;
+    }
+    
+    .content-title {
+        font-size: 28px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        padding: 20px 15px;
+    }
+    
+    .content-title {
+        font-size: 24px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+<body>
+<header id="header">
+<div class="container header-content">
+    <div class="logo">
+        <img src="/Users/omnis/Documents/GitHub/HarmonyTimer/images/logo/harmony-logo.png" alt="Harmony Timer Logo">
+        <span class="logo-text">HARMONY TIMER</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html#workout-section">TIMERS</a></li>
+            <li><a href="index.html#screenshots">SCREENSHOTS</a></li>
+            <li><a href="index.html#testimonials">TESTIMONIALS</a></li>
+        </ul>
+    </nav>
+    <a href="index.html#download" class="btn">Download</a>
+</div>
+</header>
+
+<section class="content-page">
+<div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="content-container">
+        <h1 class="content-title">Terms of Service</h1>
+        
+        <div class="content-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>Last Updated: April 11, 2025</p>
+            <p>This Terms of Service document ("Terms") is a legal agreement between you ("User" or "you") and Omnis Dragon LLC dba Journey On ("Company," "we," or "us"), the provider of the Harmony Timer mobile application ("App"). By purchasing, installing, or using Harmony Timer, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree with these Terms, you must not download, install, or use the App.</p>
+            <p>Harmony Timer is offered globally through official app marketplaces as a one-time purchase. You must be of legal age in your jurisdiction (or have permission from a parent or legal guardian) to use this App. Your use of the App is also subject to any rules or policies applied by the app store from which you downloaded Harmony Timer. By using the App, you accept these Terms and agree to comply with all applicable laws and regulations.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>2. Service Overview</h2>
+            <p>Harmony Timer is a fitness and wellness timer application designed to assist users with exercise, stretching, meditation, and related activities. The App provides various timing modes and features to help you structure your workouts and mindfulness sessions. No user account is required to use Harmony Timer, and the App does not collect personal information from you (all data is stored locally on your device, as detailed in Section 5).</p>
+            
+            <p>Key Features of Harmony Timer include:</p>
+            <ul>
+                <li><strong>Training Mode:</strong> Create structured workout timers with segments for warm-up, exercise, and cool-down phases to guide your training sessions.</li>
+                <li><strong>Rounds Mode:</strong> Configure interval training timers by setting a round duration, rest/break duration, and the number of rounds, ideal for boxing, high-intensity interval training (HIIT), or circuit workouts.</li>
+                <li><strong>Stretching Mode:</strong> Time your stretching routines with options for a simple continuous stretch timer or sectionalized timers targeting specific areas (upper body, lower body, or core), helping ensure balanced flexibility training.</li>
+                <li><strong>Meditation Mode:</strong> Facilitate mindfulness practice with either self-guided meditation timers or guided sessions that include preset or customizable breathing patterns, aiding in relaxation and breath control.</li>
+                <li><strong>Progress Tracking:</strong> View your activity history on a calendar interface that logs completed sessions. This progress tracker allows you to monitor your consistency and track which days you have completed training, stretching, or meditation activities.</li>
+                <li><strong>Customization and Settings:</strong> Adjust various App settings to enhance your experience. You can toggle background music on or off during sessions, erase or reset your locally stored data (e.g., clear your activity logs and settings through the data deletion option), and access external links to resources or community pages.</li>
+            </ul>
+            
+            <p>Harmony Timer is provided as a one-time paid application. There are no free trials, subscriptions, or in-app purchases required to access all features – once you have purchased the App, you have full access to the modes and features described above. All future updates or enhancements to these features will be made available to you subject to these Terms.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>3. License and Usage Rights</h2>
+            <p>Subject to your compliance with these Terms and your payment of any required purchase fee, the Company grants you a limited, personal, non-exclusive, non-transferable, and revocable license to download, install, and use one copy of Harmony Timer on your compatible device(s) for your own personal and non-commercial use. This license is provided to you for the sole purpose of using the App as intended – to help schedule and track your training, stretching, meditation, and related activities.</p>
+            
+            <p>You do not obtain any ownership interest in the App or any related intellectual property by purchasing or using the software; you are only granted the above usage rights. The App is licensed, not sold, to you, and your license will remain in effect until terminated as per these Terms.</p>
+            
+            <p>When using Harmony Timer, you agree to the following usage rules and restrictions:</p>
+            <ul>
+                <li><strong>Lawful Use Only:</strong> You will use the App only for lawful purposes and in accordance with these Terms. You agree not to use Harmony Timer in any manner that is unlawful, unethical, or prohibited by these Terms or any applicable laws or regulations.</li>
+                <li><strong>No Unauthorized Distribution:</strong> You will not copy, reproduce, distribute, publicly display, or publicly perform the App or any content within it, except as permitted by the App's intended functionality.</li>
+                <li><strong>No Modifications or Derivative Works:</strong> You will not modify, alter, adapt, translate, or create derivative works based on the App. The App's code and design must remain unaltered except for options explicitly allowed.</li>
+                <li><strong>No Reverse Engineering:</strong> You will not reverse engineer, decompile, disassemble, or otherwise attempt to extract or discover the source code or underlying algorithms of the App, except to the limited extent that applicable law expressly permits such activity notwithstanding this limitation.</li>
+                <li><strong>No Interference or Harmful Use:</strong> You will not use the App in a manner that could harm, disable, overburden, or impair the App or our services.</li>
+                <li><strong>Personal Use; No Commercial Exploitation:</strong> This App is for your personal use. You may not use Harmony Timer or any output from it for commercial purposes without obtaining prior written permission from the Company.</li>
+            </ul>
+            
+            <p>If you violate any of these usage restrictions or otherwise breach these Terms, the license granted to you will automatically terminate. In addition, we reserve the right to terminate your use of the App and pursue any other legal remedies available for such violations.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>4. Intellectual Property</h2>
+            <p>All content, features, and intellectual property in or of the Harmony Timer App are the exclusive property of the Company (or its licensors) and are protected by international copyright, trademark, and other intellectual property laws. This includes, but is not limited to, the software code, design, architecture, user interface, graphics, logos, icons, artwork, sound effects, background music, preset routines, and text or informational content within the App.</p>
+            
+            <p>The name "Harmony Timer", the Harmony Timer logo, and any related branding are trademarks or service marks of the Company. You are not granted any right or license to use the Company's name or any of the Company's trademarks, logos, or other brand features without our prior written consent, except as necessary for you to use the App in accordance with these Terms.</p>
+            
+            <p>You agree not to remove, alter, or obscure any copyright, trademark, or other proprietary rights notices that are incorporated in or accompanying the App. All rights not expressly granted to you in these Terms are reserved by the Company. Unauthorized use of any Company intellectual property is strictly prohibited and may result in termination of the license as well as potential legal action.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>5. User Data and Privacy</h2>
+            <p>Your privacy is important to us. Harmony Timer is designed to function without collecting personal data from you:</p>
+            <ul>
+                <li><strong>No Personal Information Collected:</strong> We do not require you to create an account or provide any personal information to use the App. When you use Harmony Timer, we do not collect, transmit, or store personally identifiable information such as your name, email address, contact info, health data, or any sensitive personal details.</li>
+                <li><strong>Local Data Storage:</strong> All data generated by your use of the App is stored locally on your device. This includes your timer settings, preferences, and activity logs. The data remains on your device and is not automatically uploaded or synced to our servers or any cloud service under our control. We (the Company) have no access to this locally stored user data.</li>
+                <li><strong>Data Deletion by User:</strong> The App provides you with the option to delete your usage data (for example, a "Reset" or "Clear Data" feature in the settings). Using this option will erase the locally stored data from your device. Please note: once deleted, this data cannot be recovered by us, as we do not keep any backups of your data on our servers.</li>
+                <li><strong>Analytics and Permissions:</strong> Harmony Timer does not employ any external analytics tracking that collects personal information. Any device permissions the App requests are solely intended to enable core functionality of the App. The Company does not use these permissions to collect your personal data.</li>
+                <li><strong>No Data Sharing:</strong> Since we do not collect your personal information, we do not sell, share, or disclose your personal data to any third parties. In particular, we do not share data with advertisers or external services, as Harmony Timer contains no third-party ads and operates fully after download without requiring server connectivity for its basic features.</li>
+            </ul>
+            
+            <p>Because we do not collect personal information through Harmony Timer, our privacy practices are straightforward: what you do in the App stays on your device. If in the future we implement any feature that requires sending data off your device, it will be clearly disclosed to you and likely governed by a separate privacy policy or an update to these Terms.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>6. External Links</h2>
+            <p>The Harmony Timer App may include links or references to external websites, services, or content that are not controlled by the Company. For example, the settings or info section of the App might provide links to our social media pages (such as Instagram) or to our shop on Etsy, or other related resources. These links are provided for your convenience and informational purposes only.</p>
+            
+            <p>Please note that when you click on a third-party link within the App, you will be redirected outside of the Harmony Timer environment and into that third-party platform or website. The Company does not own, operate, or exercise control over these outside websites or services, and therefore we cannot and do not assume responsibility for the content, privacy practices, terms of use, or policies of any third-party websites or services.</p>
+            
+            <p>By accessing external links through the App, you do so at your own risk. Any interaction you have with those third-party sites is solely between you and the third party in question. We strongly encourage you to review the terms of service and privacy policies of any third-party websites or services that you visit via links from Harmony Timer.</p>
+            
+            <p>The inclusion of any external link in our App does not imply endorsement or recommendation by the Company of the third party, their website, or their products/services. We provide these links merely as a convenience to you.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>7. Health and Fitness Disclaimer</h2>
+            <p><strong>Use at Your Own Risk:</strong> Harmony Timer is a tool to assist you in timing and tracking your fitness, stretching, and meditation routines. While we aim to help you structure your exercise and wellness activities, the Company is not a healthcare or medical provider, and we do not provide medical advice, diagnosis, or treatment. The App's content is for informational and organizational purposes only. It is not a substitute for professional fitness training advice or medical guidance tailored to your specific needs.</p>
+            
+            <p><strong>Consult Your Physician:</strong> Before starting any new exercise program or making significant changes to your fitness or wellness routine using Harmony Timer, you should consult with your physician or a qualified healthcare provider, especially if you have any known medical conditions, injuries, or concerns. This is particularly important if you are pregnant, elderly, have heart problems, high blood pressure, joint issues, or any other condition that could be affected by physical exertion, stretching, or breath control exercises. Always exercise within your limits and listen to your body's signals.</p>
+            
+            <p><strong>No Guarantee of Results:</strong> Every individual's health and fitness progress is different. The Company makes no guarantees or promises about any specific results from using the App. Any examples of outcomes or benefits are illustrative only and not assured. Your results depend on many factors outside the scope of this App, including your personal effort, diet, rest, and genetics.</p>
+            
+            <p><strong>Exercise Caution:</strong> You acknowledge that engaging in physical exercise, stretching routines, or breath control exercises can involve risks. You agree to use Harmony Timer responsibly and to not push beyond your physical limits. If at any time while using the App you experience faintness, dizziness, pain, shortness of breath, or any discomfort, stop immediately and consult a medical professional. You are solely responsible for exercising in a safe environment and manner.</p>
+            
+            <p><strong>User Assumes Risk:</strong> By using Harmony Timer, you understand and voluntarily accept the inherent risks associated with exercise and wellness activities. To the maximum extent permitted by law, the Company is not responsible or liable for any injuries, damages, or health complications you may suffer as a result of using the App or following routines timed by the App. You agree that your use of the App's fitness and meditation features is at your sole risk.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>8. Disclaimer of Warranties</h2>
+            <p>Harmony Timer is provided to you on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind, either express or implied. The Company disclaims all warranties and representations, express or implied, regarding the App, its operation, and any content or services provided through it, to the fullest extent permitted by applicable law. This includes, but is not limited to:</p>
+            
+            <ul>
+                <li><strong>Quality and Performance:</strong> We do not warrant that Harmony Timer will meet your requirements or expectations, or that the operation of the App will be uninterrupted, timely, secure, or error-free. While we have tested the App and continue to improve it, we cannot guarantee that it will always function without bugs or flaws.</li>
+                <li><strong>Accuracy of Information:</strong> We make no warranty as to the accuracy, completeness, or reliability of any information, results, or outputs that you may obtain through the App. Although we strive for accuracy, any reliance you place on such information is at your own risk.</li>
+                <li><strong>Implied Warranties:</strong> Any implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of dealing/usage of trade are expressly disclaimed. The Company does not guarantee that the Harmony Timer App is suitable for your specific needs or that it will operate in combination with any particular hardware, software, or system.</li>
+                <li><strong>Availability and Data Safety:</strong> We do not warrant that the App will always be available for download or use, or that data you store in the App will remain accessible. For example, if you delete the App or if it becomes unavailable on app stores, your local data might be lost.</li>
+                <li><strong>No Responsibility for Device Issues:</strong> While using any mobile app carries some risk, we make no warranty that Harmony Timer will be free from viruses, malware, or other harmful components, though we endeavor to prevent such issues.</li>
+            </ul>
+            
+            <p>Some jurisdictions do not allow the exclusion of certain warranties. To the extent that such laws apply to you, some of the exclusions above may not apply. In such cases, any warranties required by law are limited in duration to the shortest legally permitted period and to the minimum scope allowed.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>9. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by applicable law, in no event shall Journey On or its directors, officers, employees, affiliates, agents, contractors, or licensors be liable to you for any indirect, incidental, consequential, special, exemplary, or punitive damages whatsoever arising out of or related to your use of (or inability to use) the Harmony Timer App or any features of the App. This includes, without limitation, any damages for lost profits or revenue, loss of data or content (including your activity logs or timer settings), loss of exercise or training opportunities, business interruption, personal injuries, pain and suffering, emotional distress, or similar harms, even if we have been advised of the possibility of such damages.</p>
+            
+            <p>In no event will Journey On's total cumulative liability for all claims arising out of or relating to these Terms or the use of the App exceed the amount you paid to purchase the Harmony Timer App. Since Harmony Timer is a one-time paid product with no additional fees, our maximum liability to you shall be limited to that one-time purchase price (if any amount was paid; if the App was obtained for free during a promotion or giveaway, then our liability is limited to the amount of $1 USD or the minimum amount allowable by law). This limitation applies regardless of the form of action, whether in contract, tort (including negligence), strict liability, or otherwise.</p>
+            
+            <p>You acknowledge and agree that the above limitations of liability, together with the other provisions in these Terms that limit liability, are essential terms and that Journey On would not be willing to grant you the rights set forth in these Terms but for your agreement to the above limitations of liability. Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages, so the above limitations may not apply to you in their entirety. In such cases, the liability of Journey On will be limited to the fullest extent permitted by applicable law.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>10. Termination</h2>
+            <p>These Terms are effective from the time you accept them (by installing or using the App) and will remain in effect until terminated by either you or Journey On.</p>
+            
+            <p><strong>Termination by You:</strong> You may terminate this agreement at any time by permanently discontinuing use of the Harmony Timer App and uninstalling it from your device(s). Because the App is a one-time purchase product, uninstalling or ceasing to use the App will terminate your license, but no refund will be provided except as may be allowed under the applicable app store's refund policies or as required by law.</p>
+            
+            <p><strong>Termination by Journey On:</strong> We reserve the right to suspend or terminate your access to Harmony Timer at any time, with or without prior notice, if you violate any provision of these Terms or if we, in our sole discretion, decide to discontinue offering the App or any portion of it. We may also terminate or disable the App's functionality for users generally if, for example, maintaining the App becomes impractical or unlawful. In the event of any termination initiated by us for cause (e.g., your violation of these Terms), we are not obligated to provide any refund or compensation for the purchase you made.</p>
+            
+            <p><strong>Effect of Termination:</strong> Upon termination of this agreement for any reason, the license granted to you under these Terms will immediately cease, and you must stop all use of the Harmony Timer App. You should also delete or remove the App from your devices. Sections of these Terms that by their nature should survive termination shall continue to remain in effect after termination. Termination of this agreement will not limit any of Journey On's rights or remedies at law or in equity in case of breach by you of any of your obligations under these Terms.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>11. Changes to Service and Terms</h2>
+            <p><strong>App Updates:</strong> Journey On may, from time to time, develop patches, bug fixes, updates, upgrades, or other modifications to improve the performance or functionality of Harmony Timer. We reserve the right to deploy such updates to your device automatically or ask you to install them, and to make updates or changes to the App's features at any time. Any such updates or changes are generally intended to enhance the user experience or address issues, but we do not guarantee that an update will not affect features or performance. We also reserve the right to modify or discontinue, temporarily or permanently, the Harmony Timer App or any feature or functionality thereof, with or without notice. You agree that Journey On shall not be liable to you or any third party for any modifications, suspension, or discontinuation of the App or any part of it. If you choose not to install updates provided by us, the App may no longer function correctly or securely.</p>
+            
+            <p><strong>Changes to Terms:</strong> We may revise or update these Terms of Service from time to time to reflect changes in our practices, to address new features or changes to Harmony Timer, or for legal, regulatory, or security reasons. When we make changes to these Terms, we will update the "Last updated" date at the top of this document and make the revised Terms available via the App or our website. It is your responsibility to review these Terms periodically. We may notify you of major changes, but are not required to do so. By continuing to use the Harmony Timer App after any updates to these Terms become effective, you are indicating your acceptance of the revised Terms. If you do not agree to the updated Terms, you must stop using the App.</p>
+            
+            <p>We recommend that you review the Terms of Service each time you update the App or use new features, so you are aware of your current rights and obligations.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>12. Governing Law and Jurisdiction</h2>
+            <p>This agreement and any dispute or claim arising out of or in connection with it or its subject matter shall be governed by and construed in accordance with the laws of the United States, without giving effect to any conflict of law principles that may provide for the application of the law of another jurisdiction. The United Nations Convention on Contracts for the International Sale of Goods (CISG) shall not apply to these Terms or the use of the App.</p>
+            
+            <p>If you reside in a territory whose laws grant you mandatory consumer protections, those protections will remain in effect notwithstanding any choice of law provision in these Terms.</p>
+            
+            <p>You agree that any dispute arising out of or relating to these Terms or your use of the Harmony Timer App shall be subject to the exclusive jurisdiction of the courts of the United States (or of your country of residence if required by applicable law for consumer disputes), and you consent to the personal jurisdiction of such courts. We and you waive any objection to the exercise of jurisdiction over the parties by such courts and to venue in such courts.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>13. Miscellaneous</h2>
+            <ul>
+                <li><strong>Severability:</strong> If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision shall be enforced to the maximum extent permissible, and the remaining provisions of these Terms will remain in full force and effect.</li>
+                <li><strong>No Waiver:</strong> The failure of Journey On to exercise or enforce any right or provision of these Terms shall not operate as a waiver of that right or provision, nor shall any single or partial exercise of any right or power preclude further exercise of that or any other right.</li>
+                <li><strong>Entire Agreement:</strong> These Terms of Service (along with any applicable app store rules/policies and any additional guidelines or policies we may provide within the App) constitute the entire agreement between you and Journey On regarding your use of Harmony Timer.</li>
+                <li><strong>Assignment:</strong> You may not assign or transfer any of your rights or obligations under these Terms without the prior written consent of Journey On. We may assign our rights and obligations to an affiliate or in connection with a merger, acquisition, or sale of assets, or by operation of law or otherwise.</li>
+                <li><strong>Headings:</strong> The section titles and headings in these Terms are for convenience and organization only and have no legal or contractual effect.</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>14. Contact Information</h2>
+            <p>If you have any questions, concerns, or comments about these Terms or the Harmony Timer App, or if you need to contact us for any reason, please reach out to us:</p>
+            <p>Journey On – Harmony Timer Support<br>
+            Email: support@journeyon.co</p>
+            
+            <p>Please note: We do not have a physical mailing address for support inquiries. All communication should be directed via the email provided above.</p>
+            
+            <p>We value feedback from our users. If you have suggestions for improving Harmony Timer or questions about how to use the App, feel free to contact us at the email above. We will do our best to respond in a timely manner and address your concerns.</p>
+            
+            <p>Thank you for using Harmony Timer. By using the App, you agree to these Terms and we hope our product helps you achieve your training and wellness goals in a safe and enjoyable manner.</p>
+            
+            <p>© 2025 Journey On. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+    <div class="footer-content">
+        <div class="footer-links">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#workout-section">Timers</a></li>
+                <li><a href="index.html#screenshots">Screenshots</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#download">Download</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="mailto:support@journeyon.co">support@journeyon.co</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Journey On. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/journeyon_co/">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM17.25 5.5C17.9404 5.5 18.5 6.05964 18.5 6.75C18.5 7.44036 17.9404 8 17.25 8C16.5596 8 16 7.44036 16 6.75C16 6.05964 16.5596 5.5 17.25 5.5ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script>
+// Header shrink on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+});
+</script>
+</body>
+</html>
