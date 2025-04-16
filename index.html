@@ -175,10 +175,10 @@ section {
 }
 
 .hero-content-wrapper {
-    background-color: rgba(0, 0, 0, 0.6); /* Added semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 16px;
-    backdrop-filter: blur(5px); /* Optional: adds a slight blur effect */
+    backdrop-filter: blur(5px);
 }
 
 .hero h1 {
@@ -211,12 +211,20 @@ section {
 
 .hero-image {
     position: absolute;
-    right: -5%;
+    right: 0; /* Align to right edge */
     top: 50%;
     transform: translateY(-50%);
-    width: 55%;
-    max-width: 600px;
+    width: 40%; /* Fixed smaller percentage */
+    max-width: 600px; /* Strict maximum width */
+    min-width: 300px; /* Ensure image doesn't get too small */
     z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100vh; /* Prevent excessive height */
 }
 
 .features {
@@ -425,18 +433,18 @@ section {
 }
 
 .theme-icon {
-    width: 70px;
-    height: 70px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.theme-icon svg {
-    width: 36px;
-    height: 36px;
-    color: #fff;
+.theme-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .theme-title {
