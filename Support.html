@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support | Harmony Timer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #141414;
+    --text-primary: #EAEAEA;
+    --text-secondary: #A0A0A0;
+    --accent-red: #E53935;
+    --accent-blue: #1E88E5;
+    --accent-green: #43A047;
+    --accent-periwinkle: #5D76CB;
+    --accent-teal: #00BCD4;
+    --accent-orange: #FF7043;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--bg-primary);
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header.scrolled {
+    padding: 12px 0;
+    background-color: var(--bg-primary);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-teal);
+    transition: width .3s;
+    margin-top: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent-teal);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #a31a27;
+}
+
+.content-page {
+    min-height: calc(100vh - 200px);
+    padding: 80px 0;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--border-subtle);
+}
+
+.content-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--accent-red);
+    text-align: center;
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.content-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: var(--text-primary);
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.content-section ul, .content-section ol {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    color: var(--text-secondary);
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+footer {
+    background-color: var(--bg-secondary);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        padding: 30px 20px;
+    }
+    
+    .content-title {
+        font-size: 28px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        padding: 20px 15px;
+    }
+    
+    .content-title {
+        font-size: 24px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+.content-section a {
+    color: var(--accent-teal);
+    overflow-wrap: anywhere;
+}
+</style>
+</head>
+<body>
+<header id="header">
+<div class="container header-content">
+    <div class="logo">
+        <img src="images/logo/harmony-logo.png" alt="Harmony Timer Logo">
+        <span class="logo-text">HARMONY TIMER</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html#workout-section">TIMERS</a></li>
+            <li><a href="index.html#screenshots">SCREENSHOTS</a></li>
+            <li><a href="index.html#testimonials">TESTIMONIALS</a></li>
+        </ul>
+    </nav>
+    <a href="index.html#download" class="btn">Download</a>
+</div>
+</header>
+
+<section class="content-page">
+<div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <div class="content-container">
+        <h1 class="content-title">Harmony Timer Support</h1>
+
+        <div class="content-section">
+            <h2>Contact us</h2>
+            <p>Email: <strong><a href="mailto:support@journeyon.co">support@journeyon.co</a></strong></p>
+            <p>In the app, Settings (the gear on Home) &gt; Contact Support opens a new email. We answer in English, usually within two business days.</p>
+            <p>Please include the app version (shown at the bottom of Settings), your iPhone model and iOS version, what you did, what you expected, and what happened. A screenshot helps. Never send us your Apple Account password or payment card details.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently asked questions</h2>
+            <p><strong>What is Harmony Timer?</strong><br>An interval timer for boxing and martial arts rounds, training, stretching, and meditation, for iPhone and iPad. Set it up, tap Start, and follow the bell.</p>
+            <p><strong>What is free, and what does Harmony Timer Pro add?</strong><br>Free: Rounds (with the Quick start formats), Train and Stretch in Simple mode, Home and Progress with belts and streaks, the image you can share after a session, and the Lock Screen bells and Live Activity. Harmony Timer Pro adds Sectional mode in Train and Stretch, Meditate, and saved presets. In the app, Pro features are marked "PRO".</p>
+            <p><strong>How much does Harmony Timer Pro cost?</strong><br>In the United States, US$1.99 per month or US$19.99 per year, with a free trial for eligible new subscribers. Prices differ in other countries; the app and the App Store show the price for your country before you confirm.</p>
+            <p><strong>I subscribed before version 1.2.0. What changes?</strong><br>Nothing you need to do. Your subscription continues and includes everything in Harmony Timer Pro.</p>
+            <p><strong>How do I turn on Harmony Timer Pro on another iPhone or iPad?</strong><br>Sign in with the same Apple Account, tap any feature marked "PRO" to open the plan screen, and tap Restore Purchases.</p>
+            <p><strong>How do belts work?</strong><br>Your belt follows the days you finished a session, of any timer, in the last 30 days: yellow at 2 days, orange at 4, green at 6, blue at 8, purple at 10, brown at 12, and black at 15. If you train less, your belt can go back down, and it comes back as you train again. Your streak counts the days in a row with a session; a day without one ends it once the day is over.</p>
+            <p><strong>How do I cancel?</strong><br>Open Settings &gt; your name &gt; Subscriptions on your iPhone, choose Harmony Timer, and cancel. To avoid the next charge, cancel at least 24 hours before the free trial or the current period ends. Deleting the app does not cancel the subscription.</p>
+            <p><strong>How do I get a refund?</strong><br>Apple handles all payments, so refunds are requested from Apple at <a href="https://reportaproblem.apple.com">https://reportaproblem.apple.com</a>. We cannot issue refunds.</p>
+            <p><strong>The bell does not ring when my phone is locked.</strong></p>
+            <ul>
+                <li>Allow notifications for Harmony Timer: iOS asks on your first Start. You can turn them on later in Settings &gt; Notifications &gt; Harmony Timer, with Sounds and Time Sensitive Notifications on.</li>
+                <li>In silent mode, notification sounds are silent. The app's own sounds still play while the app is open.</li>
+                <li>Check the ringer and alerts volume in Settings &gt; Sounds &amp; Haptics.</li>
+                <li>In a Focus, allow time-sensitive notifications.</li>
+                <li>Start the timer in the app before you lock the phone.</li>
+            </ul>
+            <p><strong>The Live Activity does not appear.</strong><br>It needs iOS 16.2 or later. Check that Settings &gt; Harmony Timer &gt; Live Activities is on. The Dynamic Island is on iPhone models that have one; other models show the Live Activity on the Lock Screen.</p>
+            <p><strong>Where is the background music?</strong><br>Background music is off by default since version 1.2.0. Turn it on in the app's Settings &gt; Sound &gt; Play Background Music.</p>
+            <p><strong>Where is my data, and how do I move it to a new device?</strong><br>Your history, presets, and settings are stored only on your iPhone or iPad. They move with an iCloud or computer backup of your device, or when you set up a new device from the old one. They are not synced between devices.</p>
+            <p><strong>How do I delete my data?</strong><br>Settings &gt; Reset Progress Data deletes your session history, and with it your belt and streak. Delete presets in each timer, or delete the app to remove everything. The Privacy Policy says how to ask us to delete any other information.</p>
+            <p><strong>Does Harmony Timer work offline?</strong><br>Yes. The timers run without a connection. Buying and restoring a subscription need one.</p>
+            <p><strong>Is Harmony Timer medical advice?</strong><br>No. It is a timer. Talk to a doctor before you start a new exercise or breathing routine, and stop if you feel pain or dizziness. The Terms of Use say more.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Legal</h2>
+            <ul>
+                <li>Terms of Use: <a href="https://harmonytimer.journeyon.co/TermsOfService.html">https://harmonytimer.journeyon.co/TermsOfService.html</a></li>
+                <li>Privacy Policy: <a href="https://harmonytimer.journeyon.co/PrivacyPolicy.html">https://harmonytimer.journeyon.co/PrivacyPolicy.html</a></li>
+                <li>Apple's standard license agreement: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></li>
+            </ul>
+            <p>Omnis Dragon LLC, doing business as Journey On, 116 Agnes Rd, Ste 200, Knoxville, Tennessee 37919-6306, United States. <a href="mailto:support@journeyon.co">support@journeyon.co</a></p>
+            <p>© 2026 Journey On. iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+    <div class="footer-content">
+        <div class="footer-links">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#workout-section">Timers</a></li>
+                <li><a href="index.html#screenshots">Screenshots</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#download">Download</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="TermsOfService.html">Terms of Use</a></li>
+                <li><a href="Support.html">Support</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="mailto:support@journeyon.co">support@journeyon.co</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Journey On. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/journeyon_co/">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM17.25 5.5C17.9404 5.5 18.5 6.05964 18.5 6.75C18.5 7.44036 17.9404 8 17.25 8C16.5596 8 16 7.44036 16 6.75C16 6.05964 16.5596 5.5 17.25 5.5ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script>
+// Header shrink on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+});
+</script>
+</body>
+</html>
